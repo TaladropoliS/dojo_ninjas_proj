@@ -9,7 +9,8 @@ class Dojos(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 class Ninjas(models.Model):
-    name = models.CharField(max_length=255, null=True)
+    first_name = models.CharField(max_length=255, null=True)
+    last_name = models.CharField(max_length=255, null=True)
     dojo = models.ForeignKey(Dojos, related_name="ninja", on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
